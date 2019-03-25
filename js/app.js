@@ -2,7 +2,7 @@ var op1 = '';
 var op2 = '';
 var operando = ''
 var resultado = '';
-var bandera = false;
+var estado = '-' //i - igual
 
 //CREANDO VARIABLES
 var cero = document.getElementById('0')
@@ -34,72 +34,132 @@ var valor
 cero.addEventListener('click', function(){
   valor = pantalla.innerText
   if(valor.length < 8){
-    if((valor==0 && valor.indexOf('.') == -1) || bandera){pantalla.innerHTML = "0"; bandera = false}
-    else {pantalla.innerHTML = valor + "0"}
+    if(valor==0 && valor.indexOf('.') == -1){
+      pantalla.innerHTML = "0";
+    }
+    else {
+      pantalla.innerHTML = valor + "0"
+    }
   }
+  if("srmd".indexOf(estado)!=-1)
+    estado = 'n2';
 })
 uno.addEventListener('click', function(){
   valor = pantalla.innerText
   if(valor.length < 8){
-    if((valor==0 && valor.indexOf('.') == -1) || bandera){pantalla.innerHTML = "1"; bandera = false}
-    else {pantalla.innerHTML = valor + "1"}
+    if(valor==0 && valor.indexOf('.') == -1){
+      pantalla.innerHTML = "1";
+    }
+    else {
+      pantalla.innerHTML = valor + "1"
+    }
   }
+  if("srmd".indexOf(estado)!=-1)
+    estado = 'n2';
 })
 dos.addEventListener('click', function(){
   valor = pantalla.innerText
   if(valor.length < 8){
-    if((valor==0 && valor.indexOf('.') == -1) || bandera){pantalla.innerHTML = "2"; bandera = false}
-    else {pantalla.innerHTML = valor + "2"}
+    if(valor==0 && valor.indexOf('.') == -1){
+      pantalla.innerHTML = "2";
+    }
+    else {
+      pantalla.innerHTML = valor + "2"
+    }
   }
+  if("srmd".indexOf(estado)!=-1)
+    estado = 'n2';
 })
 tres.addEventListener('click', function(){
   valor = pantalla.innerText
   if(valor.length < 8){
-    if((valor==0 && valor.indexOf('.') == -1) || bandera){pantalla.innerHTML = "3"; bandera = false}
-    else {pantalla.innerHTML = valor + "3"}
+    if(valor==0 && valor.indexOf('.') == -1){
+      pantalla.innerHTML = "3";
+    }
+    else {
+      pantalla.innerHTML = valor + "3"
+    }
   }
+  if("srmd".indexOf(estado)!=-1)
+    estado = 'n2';
 })
 cuatro.addEventListener('click', function(){
   valor = pantalla.innerText
   if(valor.length < 8){
-    if((valor==0 && valor.indexOf('.') == -1) || bandera){pantalla.innerHTML = "4"; bandera = false}
-    else {pantalla.innerHTML = valor + "4"}
+    if(valor==0 && valor.indexOf('.') == -1){
+      pantalla.innerHTML = "4";
+    }
+    else {
+      pantalla.innerHTML = valor + "4"
+    }
   }
+  if("srmd".indexOf(estado)!=-1)
+    estado = 'n2';
 })
 cinco.addEventListener('click', function(){
   valor = pantalla.innerText
   if(valor.length < 8){
-    if((valor==0 && valor.indexOf('.') == -1) || bandera){pantalla.innerHTML = "5"; bandera = false}
-    else {pantalla.innerHTML = valor + "5"}
+    if(valor==0 && valor.indexOf('.') == -1){
+      pantalla.innerHTML = "5";
+    }
+    else {
+      pantalla.innerHTML = valor + "5"
+    }
   }
+  if("srmd".indexOf(estado)!=-1)
+    estado = 'n2';
 })
 seis.addEventListener('click', function(){
   valor = pantalla.innerText
   if(valor.length < 8){
-    if((valor==0 && valor.indexOf('.') == -1) || bandera){pantalla.innerHTML = "6"; bandera = false}
-    else {pantalla.innerHTML = valor + "6"}
+    if(valor==0 && valor.indexOf('.') == -1){
+      pantalla.innerHTML = "6";
+    }
+    else {
+      pantalla.innerHTML = valor + "6"
+    }
   }
+  if("srmd".indexOf(estado)!=-1)
+    estado = 'n2';
 })
 siete.addEventListener('click', function(){
   valor = pantalla.innerText
   if(valor.length < 8){
-    if((valor==0 && valor.indexOf('.') == -1) || bandera){pantalla.innerHTML = "7"; bandera = false}
-    else {pantalla.innerHTML = valor + "7"}
+    if(valor==0 && valor.indexOf('.') == -1){
+      pantalla.innerHTML = "7";
+    }
+    else {
+      pantalla.innerHTML = valor + "7"
+    }
   }
+  if("srmd".indexOf(estado)!=-1)
+    estado = 'n2';
 })
 ocho.addEventListener('click', function(){
   valor = pantalla.innerText
   if(valor.length < 8){
-    if((valor==0 && valor.indexOf('.') == -1) || bandera){pantalla.innerHTML = "8"; bandera = false}
-    else {pantalla.innerHTML = valor + "8"}
+    if(valor==0 && valor.indexOf('.') == -1){
+      pantalla.innerHTML = "8";
+    }
+    else {
+      pantalla.innerHTML = valor + "8"
+    }
   }
+  if("srmd".indexOf(estado)!=-1)
+    estado = 'n2';
 })
 nueve.addEventListener('click', function(){
   valor = pantalla.innerText
   if(valor.length < 8){
-    if((valor==0 && valor.indexOf('.') == -1) || bandera){pantalla.innerHTML = "9"; bandera = false}
-    else {pantalla.innerHTML = valor + "9"}
+    if(valor==0 && valor.indexOf('.') == -1){
+      pantalla.innerHTML = "9";
+    }
+    else {
+      pantalla.innerHTML = valor + "9"
+    }
   }
+  if("srmd".indexOf(estado)!=-1)
+    estado = 'n2';
 })
 
 //funciones aumentar y reducir efecto boton
@@ -156,75 +216,142 @@ on.addEventListener('click', function(){
   pantalla.innerHTML = '0';
   op1 = '';
   op2 = '';
-  operando = ''
+  operando = '';
   resultado = '';
+  estado = '-';
 })
 
 //funccion boton punto
 punto.addEventListener('click', function(){
   valor = pantalla.innerText
   if(valor.length < 7 && valor.indexOf('.') == -1){
-    pantalla.innerHTML = valor + "."
+    if(valor==''){
+      pantalla.innerHTML = valor + "0."
+    }
+    else{
+      pantalla.innerHTML = valor + "."
+    }
+    if("srmd".indexOf(estado)!=-1)
+      estado = 'n2';
   }
-  if(valor=='') pantalla.innerHTML = valor + "0."
 })
 
 //funcion signo
 signo.addEventListener('click', function(){
   valor = pantalla.innerText
-  if(valor.length < 8 && valor!=0){
-    if(valor.indexOf('-') == -1){pantalla.innerHTML = "-" + valor}
-    else {pantalla.innerHTML = valor.replace('-','')}
+  if(valor!=0){
+    if(valor.indexOf('-') == -1 && valor.length < 8){
+      pantalla.innerHTML = "-" + valor
+    }
+    else {
+      pantalla.innerHTML = valor.replace('-','')
+    }
   }
 })
 
 //funciones botones operadores
 mas.addEventListener('click', function(){
-  if(op1=='') op1 = pantalla.innerText;
-  operando = '+';
-  pantalla.innerHTML = '';
-  bandera = true;
+  if(estado != 'n2'){
+    if(estado == 'i'){
+      op1 = resultado;
+    }
+    else{
+      valor = pantalla.innerText
+      if(valor!=''){
+          op1 = pantalla.innerText;
+      }
+    }
+    operando = '+';
+    estado = 's'
+    pantalla.innerHTML = '';
+  }
 })
 menos.addEventListener('click', function(){
-  if(op1=='') op1 = pantalla.innerText;
-  operando = '-';
-  pantalla.innerHTML = '';
-  bandera = true;
+  if(estado != 'n2'){
+    if(estado == 'i'){
+      op1 = resultado;
+    }
+    else{
+      valor = pantalla.innerText
+      if(valor!=''){
+          op1 = pantalla.innerText;
+      }
+    }
+    operando = '-';
+    estado = 'r'
+    pantalla.innerHTML = '';
+  }
 })
 por.addEventListener('click', function(){
-  if(op1=='') op1 = pantalla.innerText;
-  operando = '*';
-  pantalla.innerHTML = '';
-  bandera = true;
+  if(estado != 'n2'){
+    if(estado == 'i'){
+      op1 = resultado;
+    }
+    else{
+      valor = pantalla.innerText
+      if(valor!=''){
+          op1 = pantalla.innerText;
+      }
+    }
+    operando = '*';
+    estado = 'm'
+    pantalla.innerHTML = '';
+  }
 })
 divide.addEventListener('click', function(){
-  if(op1=='') op1 = pantalla.innerText;
-  operando = '/';
-  pantalla.innerHTML = '';
-  bandera = true;
+  if(estado != 'n2'){
+    if(estado == 'i'){
+      op1 = resultado;
+    }
+    else{
+      valor = pantalla.innerText
+      if(valor!=''){
+          op1 = pantalla.innerText;
+      }
+    }
+    operando = '/';
+    estado = 'd'
+    pantalla.innerHTML = '';
+  }
 })
 
 //funcion igual
 igual.addEventListener('click', function(){
-  op2 = pantalla.innerText;
+  valor = pantalla.innerText
+  if(estado == 'i'){
+    op1 = valor
+  }
+  else{
+    if(valor!=''){
+        op2 = pantalla.innerText;
+    }
+    else {
+      op2 = "0";
+    }
+  }
   operar();
-  resultado += ''
+  resultado = resultado + ''
   if(resultado.length<=8)
     pantalla.innerHTML = resultado;
   else
-    pantalla.innerHTML = resultado.substring(0, 8 );
+    pantalla.innerHTML = resultado.substring(0, 8);
+  estado = 'i'
 })
 
 //function operacion
 function operar(){
-  if(op1.indexOf('.') == op1.length-1) op1.replace('.','');
-  if(op2.indexOf('.') == op2.length-1) op2.replace('.','');
+  if(op1.indexOf('.') == op1.length-1){
+    op1.replace('.','');
+  }
+  if(op2.indexOf('.') == op2.length-1){
+    op2.replace('.','');
+  }
   switch (operando) {
     case '+':
-      resultado = parseFloat(op1) + parseFloat(op2);
+      resultado = (parseFloat(op1)*10 + parseFloat(op2)*10)/10;
     break;
     case '-':
-      resultado = op1 - op2;
+      resultado = (op1*10 - op2*10)/10;
     break;
     case '*':
       resultado = op1 * op2;
@@ -233,11 +360,9 @@ function operar(){
       if(op2!=0)
         resultado = op1 / op2;
       else
-        resultado = 'ERROR'
+        resultado = 'DIV/0'
     break;
     default:
         resultado = pantalla.innerText
   }
-  op1 = ''+resultado;
-  bandera = true;
 }
